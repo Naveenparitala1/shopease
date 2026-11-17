@@ -1,0 +1,7 @@
+package com.shopease.exception;
+
+public class PaymentFailedException extends ShopException {
+    public PaymentFailedException(String message) {
+        super(message);
+    }
+}
