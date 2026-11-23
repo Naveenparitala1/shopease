@@ -1,11 +1,6 @@
 package com.shopease;
 
-import com.shopease.repository.CustomerRepository;
-import com.shopease.repository.InMemoryCustomerRepository;
-import com.shopease.repository.InMemoryOrderRepository;
-import com.shopease.repository.InMemoryProductRepository;
-import com.shopease.repository.OrderRepository;
-import com.shopease.repository.ProductRepository;
+import com.shopease.repository.*;
 import com.shopease.service.AuthService;
 import com.shopease.service.CartService;
 import com.shopease.service.OrderService;
@@ -15,7 +10,7 @@ import com.shopease.ui.ConsoleMenu;
 public class ShopEaseApp {
     public static void main(String[] args) {
         // 1. Repositories: where data lives
-        ProductRepository productRepository = new InMemoryProductRepository();
+        ProductRepository productRepository = new FileProductRepository("products.csv");
         CustomerRepository customerRepository = new InMemoryCustomerRepository();
         OrderRepository orderRepository = new InMemoryOrderRepository();
 
